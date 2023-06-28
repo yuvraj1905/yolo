@@ -42,6 +42,10 @@ const ProfilePage = () => {
       type: "setSearchInput",
       payload: "",
     });
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1500);
   }, [usernamee]);
   const {
     _id,
@@ -176,6 +180,8 @@ const ProfilePage = () => {
     setFollowerListOpen(false);
     setFollowingListOpen(false);
   }, [usernamee]);
+
+  // useEffect(() => {}, []);
   return (
     <>
       {loading ? (

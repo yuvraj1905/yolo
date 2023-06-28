@@ -36,6 +36,8 @@ const LeftSide = () => {
           type: "showRecentSearches",
           payload: false,
         });
+
+        logoutBtn && setLogoutBtn(false);
       }}
     >
       <section className="logo__and__navlinks">

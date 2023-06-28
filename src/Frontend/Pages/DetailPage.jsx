@@ -11,6 +11,7 @@ import "../styles/detailsPage.css";
 import { BiComment } from "react-icons/bi";
 import { BsBookmark, BsImage } from "react-icons/bs";
 import {
+  addBookmarkHandler,
   addCommentHandler,
   cloudinaryImageFetcher,
   dislikeHandler,
@@ -18,6 +19,7 @@ import {
   likeHandler,
   postDeleteHandler,
   postUpdater,
+  removeBookmarkHandler,
   unfollowUserHandler,
 } from "../Services/PostsManager";
 import axios from "axios";
@@ -28,6 +30,8 @@ import { ImCross } from "react-icons/im";
 import { RxCross1 } from "react-icons/rx";
 import { getPostDate } from "../Services/postDateCalculator";
 import { PulseLoader } from "react-spinners";
+import { FaBookmark, FaRegBookmark } from "react-icons/fa";
+import { toastMaker } from "../Services/toastMaker";
 
 const DetailPage = () => {
   const [loading, setLoading] = useState(true);
@@ -43,6 +47,7 @@ const DetailPage = () => {
       token,
       explorePageData,
       currentUser: {
+        bookmarks,
         following,
         username: currentUser_username,
         profileAvatar: currentUser_profileAvatar,
@@ -194,7 +199,11 @@ const DetailPage = () => {
                   })
                 }
                 className="profilepPictures cursorPointer"
-                src={currentUser_profileAvatar}
+                src={
+                  currentUser_username === username
+                    ? currentUser_profileAvatar
+                    : profileAvatar
+                }
                 alt={username}
               />
             </span>
@@ -432,6 +441,9 @@ const DetailPage = () => {
                     onClick={(e) => {
                       e.stopPropagation();
                       dislikeHandler(_id, token, dispatchAuthState);
+                      setTimeout(() => {
+                        toastMaker("success", "disliked post", "bottom-right");
+                      }, 1000);
                     }}
                   />
                 ) : (
@@ -441,6 +453,9 @@ const DetailPage = () => {
                     onClick={(e) => {
                       e.stopPropagation();
                       likeHandler(_id, token, dispatchAuthState);
+                      setTimeout(() => {
+                        toastMaker("success", "liked post", "bottom-right");
+                      }, 1000);
                     }}
                   />
                 )}
@@ -450,7 +465,41 @@ const DetailPage = () => {
                 <BiComment size={20} style={{ cursor: "pointer" }} />
                 {comments?.length > 0 && comments?.length}
               </span>
-              <BsBookmark size={16} className="cursorPointer" />
+              <span className="like">
+                {bookmarks?.find((post) => post === _id) ? (
+                  <FaBookmark
+                    size={15}
+                    className="cursorPointer"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setTimeout(() => {
+                        toastMaker(
+                          "success",
+                          "Removed bookmarked",
+                          "bottom-right"
+                        );
+                      }, 500);
+                      removeBookmarkHandler(_id, token, dispatchAuthState);
+                    }}
+                  />
+                ) : (
+                  <FaRegBookmark
+                    size={15}
+                    className="cursorPointer"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setTimeout(() => {
+                        toastMaker(
+                          "success",
+                          "Post Bookmarked",
+                          "bottom-right"
+                        );
+                      }, 500);
+                      addBookmarkHandler(_id, token, dispatchAuthState);
+                    }}
+                  />
+                )}
+              </span>
             </span>
           </section>
           <section className="totalLikeCommentsLine">

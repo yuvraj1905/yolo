@@ -299,3 +299,14 @@ export const removeBookmarkHandler = async (
     console.log(e, "remove");
   }
 };
+
+export const userFinder = async (usernamee) => {
+  try {
+    const res = await axios.get(`/api/users/${usernamee}`);
+    if (res.status === 200 || res.status === 201) {
+      return { ...res.data.user };
+    }
+  } catch (err) {
+    console.log(err);
+  }
+};

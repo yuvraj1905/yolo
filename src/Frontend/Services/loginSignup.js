@@ -45,7 +45,8 @@ export const loginHandler = async (
         type: "dataSetter",
         payload: [response.data.encodedToken, { ...response.data.foundUser }],
       });
-      navigate("/", { state: { from: "/login" } });
+      navigate("/");
+      // toastMaker("success", "Login successfull! ", "bottom-right");
     }
   } catch (err) {
     toastMaker("error", err.response.data.errors[0]);

@@ -21,6 +21,7 @@ import {
   postUpdater,
   removeBookmarkHandler,
   unfollowUserHandler,
+  userFinder,
 } from "../Services/PostsManager";
 import { useAuthContext } from "../Context/AuthContext";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -85,6 +86,8 @@ const HomepagePostCard = ({ data, dpCard, loadingSetter }) => {
       setEditedContentMedia(URL.createObjectURL(file));
     }
   };
+
+  const whoIsThisUser = userFinder(username);
 
   // useEffect(() => {}, [explorePageData]);
   useEffect(() => {
@@ -388,7 +391,7 @@ const HomepagePostCard = ({ data, dpCard, loadingSetter }) => {
                 onClick={(e) => {
                   setTimeout(() => {
                     toastMaker("success", "Post disliked", "bottom-right");
-                  }, 1200);
+                  }, 1000);
                   e.stopPropagation();
                   dislikeHandler(_id, token, dispatchAuthState);
                 }}
@@ -400,7 +403,7 @@ const HomepagePostCard = ({ data, dpCard, loadingSetter }) => {
                 onClick={(e) => {
                   setTimeout(() => {
                     toastMaker("success", "Post Liked", "bottom-right");
-                  }, 1200);
+                  }, 1000);
                   e.stopPropagation();
                   likeHandler(_id, token, dispatchAuthState);
                 }}
