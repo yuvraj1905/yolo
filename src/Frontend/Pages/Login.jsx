@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BiShow, BiHide } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
-import { loginHandler } from "../Services/loginSignup";
+import { loginHandler, loginHandlerGuest } from "../Services/loginSignup";
 import { useAuthContext } from "../Context/AuthContext";
 import entryGif from "../assets/entryGif.gif";
 import "../styles/loginPage.css";
@@ -15,11 +15,15 @@ const Login = () => {
 
   return (
     <div className="loginPage">
-      <img src={entryGif} alt="" className="entryGif" />
+      <img
+        src="https://res.cloudinary.com/yuvraj1905/image/upload/v1687950350/entryGif_ebuipk.gif"
+        alt=""
+        className="entryGif"
+      />
       <section className="loginDetailsSection">
         <img
           className="entryLogo"
-          src="https://play-lh.googleusercontent.com/4AkZWfEkCu4ni6c01hsTTDvGy96qVDllWpSg1i_EGln5nF9sbHs8X5mXBVWtjaQWfKab"
+          src="https://res.cloudinary.com/yuvraj1905/image/upload/v1687950275/4AkZWfEkCu4ni6c01hsTTDvGy96qVDllWpSg1i_EGln5nF9sbHs8X5mXBVWtjaQWfKab_h482bi.png"
           alt="yoloLogo"
         />
         <form

@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+<div align="center">
+  <img src="https://res.cloudinary.com/yuvraj1905/image/upload/v1687950275/4AkZWfEkCu4ni6c01hsTTDvGy96qVDllWpSg1i_EGln5nF9sbHs8X5mXBVWtjaQWfKab_h482bi.png" height="100" width="100" alt="logo"/>
+  <h1>Yolo</h1>
+    <p>Yolo is a Social Media where users can share events, activities, memories and more in the form of posts. It features most of the latest and unique features of any social media app. </p>
+ </div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Different pages of the app
 
-## Available Scripts
+- Authentication (Login, Signup) Pages
+- Profile Page
+- Home Page
+- Explore Page
+- Single Post Details Page
+- Bookmarks Page
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- Authentication using JWT along with form validation for Login and Signup Pages. All the below features are present after login.
+- User can create, edit and delete the post.
+- Image and Emojis can be added to the Post.
+- User can add, edit and delete comment on any post.
+- User can like or unlike any post.
+- User can add or remove post from bookmarks.
+- Home Page where user can see their posts and the posts of friends followed by user.
+- Trending and Latest filters by which user can sort the posts based on maximum likes and by date.
+- Explore Page where all the posts will be visible.
+- Infinite scrolling on Explore Page while fetching posts.
+- Bookmarks Page where all the posts bookmarked by user will be visible.
+- User can follow or unfollow other users.
+- Profile Page where user can edit their profile.
+- It contains details like Account Creation Date, Avatar, Bio and Portfolio URL. User can edit the profile.
+- User can view the profile of other users as well.
+- Search Functionality with search suggestions.
+- Search history maintained.
+- User can view all the comments of the post on the Individual Post Page.
+- Loader is shown while the posts are fetched.
+- Alerts in the app to notify the users about success/failure operations.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tech Stack and Tools
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Hooks: useReducer,useContext,useState,useNavigate,useRef
+- React Router v6
+- Netlify for Deployment
+- Cloudinary for Image and Video Storage
 
-### `npm test`
+## Live Link
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[Yolo](https://yolo-neogcamp.netlify.app/)
 
-### `npm run build`
+<!-- ## Demo Video
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+https://user-images.githubusercontent.com/42478246/168470598-2e81ba8f-b7c9-4497-be93-701babf434c9.mp4 -->

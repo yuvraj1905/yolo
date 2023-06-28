@@ -388,7 +388,7 @@ const HomepagePostCard = ({ data, dpCard, loadingSetter }) => {
                 onClick={(e) => {
                   setTimeout(() => {
                     toastMaker("success", "Post disliked", "bottom-right");
-                  }, 1000);
+                  }, 1200);
                   e.stopPropagation();
                   dislikeHandler(_id, token, dispatchAuthState);
                 }}
@@ -400,7 +400,7 @@ const HomepagePostCard = ({ data, dpCard, loadingSetter }) => {
                 onClick={(e) => {
                   setTimeout(() => {
                     toastMaker("success", "Post Liked", "bottom-right");
-                  }, 1000);
+                  }, 1200);
                   e.stopPropagation();
                   likeHandler(_id, token, dispatchAuthState);
                 }}
@@ -419,6 +419,9 @@ const HomepagePostCard = ({ data, dpCard, loadingSetter }) => {
                 className="cursorPointer"
                 onClick={(e) => {
                   e.stopPropagation();
+                  setTimeout(() => {
+                    toastMaker("success", "Removed bookmarked", "bottom-right");
+                  }, 1200);
                   removeBookmarkHandler(_id, token, dispatchAuthState);
                 }}
               />
@@ -428,6 +431,9 @@ const HomepagePostCard = ({ data, dpCard, loadingSetter }) => {
                 className="cursorPointer"
                 onClick={(e) => {
                   e.stopPropagation();
+                  setTimeout(() => {
+                    toastMaker("success", "Post Bookmarked", "bottom-right");
+                  }, 1200);
                   addBookmarkHandler(_id, token, dispatchAuthState);
                 }}
               />

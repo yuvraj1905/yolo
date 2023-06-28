@@ -16,11 +16,15 @@ const Signup = () => {
   const navigate = useNavigate();
   return (
     <div className="loginPage">
-      <img src={entryGif} alt="" className="entryGif" />
+      <img
+        src="https://res.cloudinary.com/yuvraj1905/image/upload/v1687950350/entryGif_ebuipk.gif"
+        alt=""
+        className="entryGif"
+      />
       <section className="loginDetailsSection">
         <img
           className="entryLogo signuplogo"
-          src="https://play-lh.googleusercontent.com/4AkZWfEkCu4ni6c01hsTTDvGy96qVDllWpSg1i_EGln5nF9sbHs8X5mXBVWtjaQWfKab"
+          src="https://res.cloudinary.com/yuvraj1905/image/upload/v1687950275/4AkZWfEkCu4ni6c01hsTTDvGy96qVDllWpSg1i_EGln5nF9sbHs8X5mXBVWtjaQWfKab_h482bi.png"
           alt="yoloLogo"
         />
         <form

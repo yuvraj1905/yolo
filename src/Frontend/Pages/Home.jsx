@@ -11,6 +11,8 @@ import { ImCross } from "react-icons/im";
 import axios from "axios";
 import { PulseLoader } from "react-spinners";
 import EmojiPicker from "emoji-picker-react";
+import { toastMaker } from "../Services/toastMaker";
+import { useLocation } from "react-router-dom";
 
 const Home = () => {
   const {
@@ -79,6 +81,12 @@ const Home = () => {
   //     setLoading(false);
   //   }, 1000);
   // }, [currentUser.following]);
+
+  // const location = useLocation();
+  // useEffect(() => {
+  //   location?.state?.from === "/login" &&
+  //     toastMaker("success", "Login successfull! Yolo!", "bottom-right");
+  // }, []);
   return (
     <>
       {loading ? (

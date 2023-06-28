@@ -54,7 +54,7 @@ export const posts = [
     },
 
     media:
-      "https://img.freepik.com/free-vector/happy-father-s-day_24908-59789.jpg?w=2000",
+      "https://res.cloudinary.com/yuvraj1905/image/upload/v1687949692/happy-father-s-day_24908-59789_gfee2v.avif",
     createdAt: "2023-05-11",
     updatedAt: "2023-05-11",
     comments: [
@@ -443,7 +443,8 @@ export const posts = [
       ],
     },
 
-    media: "https://mufit.id/admin/uploads/image/gym_management-min.jpg",
+    media:
+      "https://res.cloudinary.com/yuvraj1905/image/upload/v1687949883/gym_management-min_z042yf.jpg",
     createdAt: "2023-06-05",
     updatedAt: "2023-06-05",
     comments: [
@@ -513,7 +514,7 @@ export const posts = [
     },
 
     media:
-      "https://img.jagranjosh.com/images/2023/May/3052023/ipl-2023-winner-chennai-super-kings-csk.jpg",
+      "https://res.cloudinary.com/yuvraj1905/image/upload/v1687949942/ipl-2023-winner-chennai-super-kings-csk_nkwc6o.jpg",
     createdAt: "2023-06-17",
     updatedAt: "2023-06-17",
     comments: [
@@ -578,7 +579,7 @@ export const posts = [
     },
 
     media:
-      "https://thesportsgrail.com/wp-content/uploads/2021/12/ap-dhillon-stock-1-min.jpg",
+      "https://res.cloudinary.com/yuvraj1905/image/upload/v1687950009/ap-dhillon-stock-1-min_bzihym.jpg",
     createdAt: "2023-06-09",
     updatedAt: "2023-06-09",
     comments: [

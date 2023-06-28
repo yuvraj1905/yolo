@@ -14,6 +14,7 @@ import {
 import { MdExplore, MdOutlineExplore } from "react-icons/md";
 import { BsBookmark, BsBookmarkFill } from "react-icons/bs";
 import { FaBookmark, FaRegBookmark } from "react-icons/fa";
+import { toastMaker } from "../Services/toastMaker";
 
 const LeftSide = () => {
   const {
@@ -146,6 +147,7 @@ const LeftSide = () => {
               onClick={(e) => {
                 e.stopPropagation();
                 dispatchAuthState({ type: "logoutHandler" });
+                toastMaker("success", "Logout successfully", "bottom-right");
               }}
               style={{ display: !logoutBtn ? "none" : "" }}
               className="logOut__btn cursorPointer"
