@@ -1,23 +1,102 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Routes, Route, useLocation } from "react-router-dom";
+import Home from "./Frontend/Pages/Home";
+import Login from "./Frontend/Pages/Login";
+import Signup from "./Frontend/Pages/Signup";
+import Explore from "./Frontend/Pages/Explore";
+import Bookmarks from "./Frontend/Pages/Bookmarks";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import RequiredAuth from "./Frontend/Components/RequiredAuth";
+import LeftSide from "./Frontend/Components/LeftSide";
+import RightSide from "./Frontend/Components/RightSide";
+import { useAuthContext } from "./Frontend/Context/AuthContext";
+import DetailPage from "./Frontend/Pages/DetailPage";
+import ProfilePage from "./Frontend/Pages/ProfilePage";
+import { useEffect } from "react";
 
 function App() {
+  const {
+    authState: { token },
+  } = useAuthContext();
+
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [location.pathname, token]);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {token && <LeftSide />}
+
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <RequiredAuth>
+              <Home />
+            </RequiredAuth>
+          }
+        />
+        <Route
+          path="/home"
+          element={
+            <RequiredAuth>
+              <Home />
+            </RequiredAuth>
+          }
+        />
+
+        <Route
+          path="/explore"
+          element={
+            <RequiredAuth>
+              <Explore />
+            </RequiredAuth>
+          }
+        />
+        <Route
+          path="/bookmarks"
+          element={
+            <RequiredAuth>
+              <Bookmarks />
+            </RequiredAuth>
+          }
+        />
+
+        <Route
+          path="/details/:postId"
+          element={
+            <RequiredAuth>
+              <DetailPage />
+            </RequiredAuth>
+          }
+        />
+        <Route
+          path="/profile/:usernamee"
+          element={
+            <RequiredAuth>
+              <ProfilePage />
+            </RequiredAuth>
+          }
+        />
+
+        <Route path="/login" element={<Login />} />
+        {/* <Route path="/loginNew" element={<LoginNew />} /> */}
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
+      {token && <RightSide />}
+      <ToastContainer
+        position="top-center"
+        autoClose={1500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </div>
   );
 }

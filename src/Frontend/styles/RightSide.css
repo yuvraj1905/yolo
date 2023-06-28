@@ -1,0 +1,74 @@
+.rightSide {
+  flex: 0 0 15rem;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 3.15rem;
+  padding: 0.5rem 1.2rem;
+  /* border-left: 4px solid #cfd9de; */
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.search__users {
+  background-color: #eff3f4;
+  /* background-color: pink; */
+  outline: none;
+  border: none;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  width: 90%;
+}
+
+.searchUsersSpan {
+  position: relative;
+  /* min-height: 250px; */
+  margin-left: 2rem;
+  background-color: #eff3f4;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 1rem;
+  /* top: -0.4rem; */
+  padding: 0.15rem 0.75rem;
+}
+.emptySearch {
+  position: absolute;
+  right: 1.25rem;
+}
+.suggestedUsersSection {
+  display: flex;
+  margin-left: 2rem;
+  flex-direction: column;
+  gap: 1.2rem;
+  border-radius: 1rem;
+}
+
+.suggested__user {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  /* max-height: 250px; */
+  /* overflow: auto; */
+}
+
+.searchUserResult {
+  border-radius: 1rem;
+
+  min-height: 250px;
+  background-color: #f7f9f9;
+  min-width: 260px;
+  padding: 0.75rem 1rem;
+  position: absolute;
+  margin-left: -0.75rem;
+  top: 3rem;
+}
+.clearBtn {
+  color: #87ceeb;
+  font-weight: 600;
+}
+.clearBtn:hover {
+  color: black;
+}

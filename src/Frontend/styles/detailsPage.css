@@ -1,0 +1,117 @@
+.detailsPage {
+  width: 91%;
+  min-height: 97vh;
+  margin-left: 0rem;
+  margin-top: 0rem;
+  position: relative;
+  /* background-color: #306a78; */
+  border-left: 4px solid #cfd9de;
+  border-right: 4px solid #cfd9de;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 0.75rem;
+  /* gap: 1rem; */
+}
+
+.editPostModalDetailPage {
+  top: 3.75rem;
+  left: 1rem;
+  width: 95.5%;
+}
+.goBackBtn {
+  /* width: 95%; */
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+  margin-bottom: 2rem;
+}
+
+.profileNameDetails {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.nameAndDp {
+  display: flex;
+  gap: 1rem;
+}
+
+.gobackfrompost {
+  padding: 0.25rem;
+}
+.gobackfrompost:hover {
+  background-color: #eff3f4;
+  border-radius: 50%;
+}
+.totalLikeCommentsLine {
+  border-top: 1px solid #eff3f4;
+  padding: 0.5rem 0;
+  margin-left: 3.75rem;
+  width: 91%;
+  display: flex;
+  gap: 1.2rem;
+}
+a {
+  text-decoration: none;
+}
+.likeOnHover:hover {
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.likeCommentLine {
+  margin-bottom: 0.5rem;
+}
+.actualCommentLine {
+  margin-left: 3.75rem;
+  margin-top: -0.25rem;
+  padding-bottom: 0.5rem;
+}
+/* .newPostAddImagePreview {
+  max-width: 90.2%;
+  min-width: 90.2%;
+} */
+.LikedByUserCard {
+  display: flex;
+  flex-direction: column;
+  background-color: #eff3f4;
+  border-top: 1px solid #eff3f4;
+  padding: 0.5rem 0.4rem;
+  margin-left: 3.75rem;
+  width: 89%;
+  gap: 1.2rem;
+  position: relative;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.likedByHeading {
+  display: flex;
+}
+.likedByUserSpan {
+  display: flex;
+  gap: 0.75rem;
+  padding: 2px 0;
+}
+.likedByUserSpan:hover {
+  background-color: #e5e5e5;
+  cursor: pointer;
+}
+.rxCross {
+  position: absolute;
+  right: 1rem;
+  padding: 4px;
+}
+.rxCross:hover {
+  background-color: rgb(181, 181, 181);
+  border-radius: 50%;
+}
+
+.likedByUserSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: -0.5rem;
+}

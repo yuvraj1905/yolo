@@ -1,0 +1,117 @@
+.commentCardOne {
+  position: relative;
+  padding: 0.3rem 0;
+  border-top: 1px solid #eff3f4;
+  /* border-top: 1px solid black; */
+}
+.commentCardOne:hover {
+  background-color: #f7f9f9;
+}
+
+.openOptionsCommentModal {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  /* gap: 0.2rem; */
+  width: 10%;
+  background-color: rgb(136, 136, 136);
+  padding: 0rem 0;
+  top: 1rem;
+  right: 2.4rem;
+  > p {
+    cursor: pointer;
+    border: none;
+  }
+}
+.commentOption:hover {
+  background-color: black;
+  color: white;
+}
+.editCommentModal {
+  position: absolute;
+  background-color: white;
+  width: 100%;
+  top: 0;
+  padding: 0.3rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  /* z-index: 1000000; */
+}
+
+.dpAndCommentInput {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  > input {
+    width: 100%;
+    word-wrap: break-word;
+    white-space: wrap;
+    font-size: 1rem;
+    margin-top: -0.3rem;
+    padding: 0.2rem 0.75rem;
+    border: none;
+    /* outline: none; */
+  }
+}
+
+.editCommentBtns {
+  margin-left: 3.7rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.editCommentBtn {
+  background-color: #535353;
+  color: white;
+  padding: 0.1rem 0.5rem;
+  /* font-weight: 600; */
+}
+.editCommentBtn:hover {
+  background-color: black;
+  color: white;
+}
+
+.postYourComment {
+  /* background-color: pink; */
+  border-top: 1px solid #eff3f4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  margin-top: 0.5rem;
+}
+
+.postYourCommentDpAndInput {
+  flex: 0 0 87%;
+  display: flex;
+  gap: 1.5rem;
+  > input {
+    width: 100%;
+    border: none;
+    /* background-color: antiquewhite; */
+    padding-top: 0;
+  }
+}
+.postYourCommentBtn {
+  flex: 0 0 10%;
+  padding: 0.35rem 0.6rem;
+  border-radius: 5%;
+  background-color: #535353;
+  color: white;
+  font-size: 1rem;
+}
+
+.postYourCommentBtn:hover {
+  background-color: black;
+}
+
+.commentOption {
+  background-color: #535353;
+  border: none;
+  color: white;
+  padding: 0.2rem 0.5rem;
+}
+.commentOption:hover {
+  background-color: black;
+}

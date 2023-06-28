@@ -1,0 +1,271 @@
+.profilePage {
+  /* width: 94%;
+  margin-left: 0.5rem;
+  margin-top: 0;
+  padding: 0.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  position: relative; */
+  /* gap: 1rem; */
+  width: 94%;
+  margin-left: 0rem;
+  margin-top: 0;
+  min-height: 98vh;
+  position: relative;
+  border-left: 4px solid #cfd9de;
+  border-right: 4px solid #cfd9de;
+  padding: 0.5rem 0rem;
+}
+.goBackBtnProfilePage {
+  display: flex;
+  align-items: flex-start;
+  margin-left: 1.2rem;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+.profilePageInfo {
+  background-color: #f0f0f0;
+  width: 95%;
+  padding: 0.25rem 1.1rem;
+
+  /* margin-left: -1.125rem; */
+  /* padding: 0.75rem 1.5rem; */
+  /* background-color: aqua; */
+  display: flex;
+  align-items: flex-start;
+  gap: 6rem;
+  /* justify-content: space-between; */
+}
+
+.ppDetails {
+  /* background-color: yellowgreen; */
+  margin-left: -4.75rem;
+  margin-top: 0.2rem;
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+.website {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #75b1cf;
+  > a {
+    color: #75b1cf;
+  }
+}
+.website:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.folUnfolBtn {
+  /* position: absolute; */
+  /* right: 1.75rem;
+  top: 4.65rem;
+  font-size: 0.9rem;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-weight: 700;
+  border: none;
+  background-color: rgb(47, 47, 47);
+  color: white;
+  margin-left: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  margin-top: 0.2rem; */
+
+  /* margin-left: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  margin-top: 0.2rem;
+  border-radius: 50px;
+  background-color: rgb(47, 47, 47);
+  color: white;
+  border: none; */
+
+  position: absolute;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  margin-top: 0.2rem;
+  border: none;
+  border-radius: 50px;
+  background-color: rgb(47, 47, 47);
+  color: white;
+  right: 2rem;
+}
+.folUnfolBtn:hover {
+  background-color: black;
+}
+
+.ff {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: black;
+}
+
+.ff:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.centering {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.linkk {
+  color: black;
+  gap: 0;
+}
+.linkkDate {
+  color: black;
+}
+
+.linkkDate:hover {
+  text-decoration: none;
+  cursor: default;
+}
+
+.ppDp {
+  height: 160px;
+  width: 160px;
+  border-radius: 50%;
+}
+.editProfileBtn {
+  /* margin-left: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  margin-top: 0.2rem;
+  border-radius: 50px;
+  background-color: #ffffff; */
+  position: absolute;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  margin-top: 0.2rem;
+  border-radius: 50px;
+  background-color: #ffffff;
+  right: 2rem;
+}
+.editProfileBtn:hover {
+  background-color: #ededed;
+}
+
+.noColor {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.editProfileModal {
+  height: 9.75rem;
+  width: 95.5%;
+  padding: 1rem;
+  /* padding-bottom: 0.75rem; */
+  background-color: #f0f0f0;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  position: absolute;
+  top: 3.55rem;
+  display: flex;
+  gap: 1.5rem;
+  /* margin-bottom: 5rem; */
+  /* border-bottom: 8px solid#f3f6f6; */
+}
+
+.changeDpIcon {
+  position: absolute;
+  left: 7.8rem;
+  top: 8.8rem;
+  /* background-color: white; */
+  /* border-radius: 50%; */
+}
+.dpChangeSpan:hover {
+  cursor: pointer;
+}
+.editProfileDetails {
+  margin-top: -0.75rem;
+  display: flex;
+  flex-direction: column;
+  > input {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 4px;
+    padding: 2px;
+  }
+  > label {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+}
+
+.newAvatarsSpan {
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: -0.7rem;
+}
+.updateAvatarTitle {
+  font-size: 0.9rem;
+  font-weight: 800;
+  margin-top: -0.2rem;
+  margin-bottom: 0.2rem;
+}
+
+.avatarOptions {
+  width: 80%;
+  margin-top: -0.1rem;
+  background-color: #75b1cf;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding: 0.5rem;
+  justify-content: space-between;
+  height: 6.6rem;
+  border-radius: 8px;
+}
+
+.profilee {
+  width: 50px;
+  height: 50px;
+}
+.profilee:hover {
+  cursor: pointer;
+}
+
+.ppSaveDiscardBtns {
+  display: flex;
+  width: 87%;
+  /* gap: 1rem; */
+  justify-content: space-between;
+  > button {
+    border-radius: 4px;
+    padding: 5px;
+    margin-top: 0.35rem;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    width: 49%;
+    color: white;
+    background-color: rgb(59, 59, 59);
+  }
+}
+.ppSaveDiscardBtns > button:hover {
+  cursor: pointer;
+  background-color: black;
+}
+.ppCardFollow {
+  width: 148%;
+  margin-left: 0rem;
+  background-color: #f8f8f8;
+  border: 2px solid white;
+}

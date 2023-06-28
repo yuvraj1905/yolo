@@ -1,0 +1,101 @@
+.loginPage {
+  /* background-color: antiquewhite; */
+  top: 6rem;
+  left: 0;
+  right: 0;
+  width: 65%;
+  height: 72vh;
+  margin: auto auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 5px solid red; */
+  position: absolute;
+  justify-content: space-between;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  border-radius: 2rem;
+}
+
+.entryGif {
+  height: 72vh;
+  width: 62%;
+  border-radius: 2rem 0 0 2rem;
+}
+
+.loginDetailsSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 35%;
+  padding: 0rem 0.5rem;
+}
+
+.entryLogo {
+  width: 95%;
+  height: 19.5rem;
+  margin-top: -0.5rem;
+  margin-bottom: 0.5rem;
+}
+.signuplogo {
+  height: 18.25rem;
+}
+.loginForm {
+  /* padding-top: 1rem; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  /* justify-content: space-between; */
+  margin: auto;
+  gap: 0.5rem;
+  > input {
+    width: 120%;
+    background-color: #fafafa;
+    padding: 6px;
+    text-align: center;
+    border: none;
+    outline: 1px solid grey;
+  }
+}
+
+.seePassword {
+  position: absolute;
+  top: 22.85rem;
+  right: 5rem;
+}
+.seePassSignup {
+  top: 25.95rem;
+}
+
+.inputUsername:valid {
+  background-color: lightgreen;
+}
+
+.inputUsername:invalid {
+  /* background-color: rgb(255, 90, 90); */
+}
+
+.guestLoginBtn {
+  width: 125%;
+  border: none;
+  background-color: #cfd9de;
+  padding: 4px;
+  font-size: 1rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.1rem;
+}
+
+.loginSignUPSwitch:hover {
+  text-decoration: underline;
+}
+
+.loginBtn {
+  background-color: #08214e;
+  color: white;
+  font-size: 1rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-top: 0.15rem;
+}

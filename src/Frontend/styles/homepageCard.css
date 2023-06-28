@@ -1,0 +1,175 @@
+.homePagePost {
+  border-top: 2px solid #eff3f4;
+  border-bottom: 1px solid #eff3f4;
+  padding: 0.5rem 1rem;
+  width: 95.5%;
+  display: flex;
+  flex-direction: column;
+  /* background-color: bisque; */
+}
+.homePagePost:hover {
+  background-color: #f7f9f9;
+  cursor: pointer;
+}
+
+.dpAndUsernameDetails {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  /* background-color: aqua; */
+}
+
+.profilepPictures {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: pink;
+}
+
+.nameDetails {
+  width: 90%;
+  /* font-size: 1.2rem; */
+  padding: 0.1rem 0.5rem;
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.naming {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.postContent {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  /* font-size: 1.2rem; */
+  padding: 0.2rem 0.1rem;
+  /* background-color: black; */
+  margin-left: 3.7rem;
+  > p {
+    margin-top: -0.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.postImg {
+  width: 100%;
+  /* height: auto; */
+  max-height: 450px;
+
+  /* background-color: #f7f9f9; */
+  border-radius: 1rem;
+  border: 1px solid #cfd9de;
+  margin-bottom: 0.2rem;
+
+  /* object-fit: contain; */
+}
+
+.likeCommentLine {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  /* background-color: aqua; */
+}
+
+.like {
+  display: flex;
+  align-items: center;
+}
+
+.suggestedUsersSection {
+  background-color: #f7f9f9;
+  border-radius: 1rem;
+  padding: 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.editPostModal {
+  position: relative;
+}
+
+.optionsModal {
+  z-index: 1000;
+  position: absolute;
+  top: 2rem;
+  right: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  /* gap: 0.25rem; */
+}
+
+.postOptionBtns {
+  background-color: rgb(83, 83, 83);
+  color: white;
+  text-align: left;
+  padding: 0.2rem 0.75rem;
+  border: none;
+  font-size: 1rem;
+}
+.postOptionBtns:hover {
+  cursor: pointer;
+  background-color: black;
+}
+.optionsBtn {
+  padding: 0.2rem;
+}
+
+.optionsBtn:hover {
+  background-color: #cfd9de;
+  border-radius: 50%;
+}
+
+.editPostModal {
+  padding: 0.5rem 1rem;
+  position: absolute;
+  width: 95%;
+  margin-left: -1rem;
+  margin-top: -0.5rem;
+  z-index: 1000000;
+  /* gap: 0.75rem; */
+  background-color: rgb(51, 81, 108);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.dpAndPostContentInput {
+  display: flex;
+  gap: 1rem;
+}
+
+.lastLineOfEditPostModal {
+  margin-top: 0.75rem;
+  display: flex;
+  width: 90.6%;
+  margin-left: 3.7rem;
+  margin-bottom: 0.1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.discardAndPostBtn {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.editPostImg {
+  height: auto;
+}
+
+.contentPara {
+  /* background-color: aqua; */
+  /* width: 99.5%; */
+  word-wrap: break-word;
+  width: 93%;
+  line-height: 1.25rem;
+  /* line-height: 0.25rem; */
+}

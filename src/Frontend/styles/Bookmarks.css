@@ -1,0 +1,20 @@
+.bookmarks {
+  width: 94%;
+  min-height: 100vh;
+  margin-left: 0rem;
+  margin-top: 0;
+  position: relative;
+  /* background-color: #306a78; */
+  border-left: 4px solid #cfd9de;
+  border-right: 4px solid #cfd9de;
+  display: flex;
+  flex-direction: column;
+  > h2 {
+    text-align: center;
+    padding: 0.4rem;
+    margin-bottom: 0.2rem;
+    font-family: Orbitron;
+
+    background-color: #f7f9f9;
+  }
+}

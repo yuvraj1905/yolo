@@ -1,0 +1,83 @@
+.leftSide {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 10rem;
+  /* padding: 0rem 1rem; */
+  padding-bottom: 2rem;
+  flex: 0 0 20%;
+  /* background-color: antiquewhite; */
+}
+
+.navlinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* .navlink {
+} */
+.navlinkSpan {
+  border: none;
+  border-radius: 24px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 8px 12px;
+  gap: 0.75rem;
+  width: 85%;
+  margin-left: -0.35rem;
+  > p {
+    font-size: 1.1rem;
+    /* font-family: Orbitron;  */
+    padding: 0.4rem 0;
+  }
+}
+.navlinkSpan:hover {
+  background-color: #e2e2e2;
+}
+.logo__and__navlinks {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.userName__and__logout {
+  /* background-color: #f7f9f9; */
+  padding: 0.75rem 1.25rem;
+  width: 12rem;
+  padding-top: 1rem;
+  margin-bottom: 0.5rem;
+  margin-left: -1.2rem;
+  /* padding-bottom: 2rem; */
+  display: flex;
+  /* background-color: rgb(106, 68, 19); */
+  justify-content: space-between;
+  /* border-radius: 36px; */
+}
+.userName__and__logout:hover {
+  background-color: #e2e2e2;
+}
+
+.userrr {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.oneLine {
+  display: flex;
+  flex-direction: column;
+}
+.logOut__btn {
+  border: none;
+  margin-top: 0.5rem;
+  padding: 6px 12px;
+  background-color: #2f2f2f;
+  color: white;
+  /* font-size: 1rem; */
+  border-radius: 12px;
+  text-transform: uppercase;
+}

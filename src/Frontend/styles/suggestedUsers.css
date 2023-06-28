@@ -1,0 +1,28 @@
+.suggestedUserCard {
+  display: flex;
+  justify-content: space-between;
+  /* gap: 1rem; */
+  width: 16rem;
+  padding: 0.5rem 0.1rem 0.5rem 0.4rem;
+}
+.suggestedUserCard:hover {
+  background-color: #e5e5e5;
+  border-radius: 0.25rem;
+}
+
+.followBtn {
+  background-color: black;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 1.25rem;
+  font-size: 0.85rem;
+  padding: 0rem 1.2rem;
+}
+
+.followBtnNameUsername {
+  flex: 0 0 82%;
+  margin-left: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}

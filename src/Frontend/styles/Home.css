@@ -1,0 +1,174 @@
+.home {
+  width: 94%;
+  margin-left: 0rem;
+  margin-top: 0;
+  position: relative;
+  min-height: 100vh;
+  /* background-color: #306a78; */
+  border-left: 4px solid #cfd9de;
+  border-right: 4px solid #cfd9de;
+}
+
+.home > h2 {
+  text-align: center;
+  padding: 0.2rem;
+  margin-bottom: 0.2rem;
+  font-family: Orbitron;
+  background-color: #f7f9f9;
+}
+
+.createNewPost {
+  border-top: 2px solid #eff3f4;
+  border-bottom: 2px solid #eff3f4;
+  padding: 0.25rem 1rem;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.imageAndNewPostInput {
+  display: flex;
+  gap: 1rem;
+  position: relative;
+}
+
+.profilepPictures {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.textarea {
+  width: 90%;
+  resize: none;
+  margin-left: 0.5rem;
+  height: 5rem;
+  overflow: auto;
+  border: 0.1rem solid white;
+  outline: none;
+  font-size: 1.2rem;
+  padding: 0.2rem 0rem;
+  /* background-color: bisque; */
+}
+.textarea:focus {
+  border: 0.1rem solid #eff3f4;
+}
+
+.editPostTextarea {
+  height: 3rem;
+}
+
+.newPostAddImagePreview {
+  width: 90%;
+  margin-top: 0.2rem;
+  background-color: #306a78;
+  height: 300px;
+  object-fit: cover;
+  margin-left: 3.8rem;
+}
+
+.lastLineOfNewPost {
+  margin-left: 3.425rem;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.5rem;
+  justify-content: space-between;
+  /* background-color: yellowgreen; */
+  width: 90%;
+}
+
+/* .emojipickerreact: {
+  --epr-emoji-size: 2px;
+} */
+
+.charcount__and__postBtn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.imageUploadAndEmojis {
+  display: flex;
+  align-items: center;
+  flex: 0 0 10%;
+  justify-content: space-between;
+}
+
+.postBtn {
+  padding: 0.3rem 0.75rem;
+  border-radius: 5%;
+  background-color: #333333;
+  color: white;
+  font-size: 1.2rem;
+}
+.postBtn:hover {
+  background-color: #0f1419;
+  cursor: pointer;
+}
+
+.disabledPostBtn {
+  padding: 0.3rem 0.75rem;
+  border-radius: 5%;
+  background-color: #333333;
+  color: white;
+  font-size: 1.2rem;
+  cursor: not-allowed;
+  opacity: 35%;
+}
+.escPreview {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  padding: 0.2rem;
+  top: 6.25rem;
+  right: 2rem;
+}
+
+.escPreviewEdit {
+  top: 5rem;
+}
+
+.escPreview:hover {
+  background-color: red;
+}
+
+.filterPosts {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  > button {
+    /* font-family: Orbitron; */
+    background-color: white;
+    border: none;
+    flex: 0 0 50%;
+    padding: 12px 0;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+}
+
+.filterPosts > button:hover {
+  background-color: #efefef;
+  cursor: pointer;
+}
+
+.currSortMode {
+  border-bottom: 4px solid #87ceeb;
+  background-color: #306a78;
+}
+
+.emojiPicker {
+  /* position: absolute; */
+  margin-left: 3.65rem;
+  /* width: 80%; */
+  /* max-height: 20px; */
+}
+
+.home .EmojiPickerReact {
+  /* --epr-picker-height: 500px; */
+  --epr-emoji-size: 30px;
+  --epr-bg-color: #f7f9f9;
+  --epr-category-label-bg-color: #f7f9f9;
+  --epr-hover-bg-color: pink;
+}
