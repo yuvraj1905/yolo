@@ -1,5 +1,53 @@
+export const dateJoinedCalculator = (userAccountCreationDate) => {
+  const year = userAccountCreationDate.slice(0, 4);
+  const month = userAccountCreationDate.slice(5, 7);
+  // console.log(month, year);
+  switch (month) {
+    case "01": {
+      return `January ${year}`;
+    }
+    case "02": {
+      return `February ${year}`;
+    }
+
+    case "03": {
+      return `March ${year}`;
+    }
+    case "04": {
+      return `April ${year}`;
+    }
+    case "05": {
+      return `May ${year}`;
+    }
+    case "06": {
+      return `June ${year}`;
+    }
+    case "07": {
+      return `July ${year}`;
+    }
+    case "08": {
+      return `August ${year}`;
+    }
+    case "09": {
+      return `September ${year}`;
+    }
+    case "10": {
+      return `October ${year}`;
+    }
+    case "11": {
+      return `November ${year}`;
+    }
+    case "12": {
+      return `December ${year}`;
+    }
+
+    default:
+      return dateJoinedCalculator.slice(0, 10);
+  }
+};
+
 export const getPostDate = (postDate) => {
-  const datePosted = new Date(postDate);
+  const datePosted = new Date(postDate); //11-06-2023
   const timeNow = new Date();
   const millisec = Math.floor(timeNow - datePosted);
   const sec = Math.floor(millisec / 1000);

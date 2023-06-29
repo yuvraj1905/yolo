@@ -35,8 +35,6 @@ export const AuthContextProvider = ({ children }) => {
     ({ username }) => username
   );
 
-  // console.log("hi");
-
   useEffect(() => {
     const homeData = authState?.explorePageData?.filter(({ username }) =>
       [...followingList, authState.currentUser.username].find(

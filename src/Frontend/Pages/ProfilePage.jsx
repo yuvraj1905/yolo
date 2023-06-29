@@ -19,6 +19,7 @@ import { useAuthContext } from "../Context/AuthContext";
 import { profileUpdaterFunction } from "../Services/renderingDataFetcher";
 import HomepagePostCard from "../Components/HomepagePostCard";
 import { PulseLoader } from "react-spinners";
+import { dateJoinedCalculator } from "../Services/postDateCalculator";
 
 const ProfilePage = () => {
   const [dataa, setDataa] = useState({});
@@ -245,7 +246,7 @@ const ProfilePage = () => {
               <p className="website linkkDate">
                 <RxCalendar style={{ alignSelf: "flex-start" }} />
                 <span style={{ alignSelf: "flex-end" }}>
-                  Joined {createdAt}
+                  Joined {dateJoinedCalculator(createdAt)}
                 </span>
               </p>
               <span className="centering">

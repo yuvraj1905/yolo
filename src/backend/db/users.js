@@ -16,7 +16,7 @@ export const users = [
     profileAvatar:
       "https://res.cloudinary.com/yuvraj1905/image/upload/v1687716248/844-8444619_student-png-male-student-cartoon-png_ibwnbv.png",
     password: "adarshBalak123",
-    createdAt: "August 2022",
+    createdAt: "2022-08-01",
     updatedAt: formatDate(),
 
     followers: [
@@ -47,7 +47,7 @@ export const users = [
     bio: "Yo bro! Brown munde ! Mayank here",
     website: "https://github.com/mayank0801",
     profileAvatar: "https://avatars.githubusercontent.com/u/36763315?v=4",
-    createdAt: "January 2023",
+    createdAt: "2023-01-01",
     updatedAt: formatDate(),
     following: [
       {
@@ -95,7 +95,7 @@ export const users = [
     website: "https://github.com/Anamika26102001",
     profileAvatar:
       "https://media.licdn.com/dms/image/D5603AQH4CjoVxLewyA/profile-displayphoto-shrink_400_400/0/1686765403158?e=1692230400&v=beta&t=TD2bZvpcrwyQ_xRFJWcKGrdedAU3zbyss3ygheSSveA",
-    createdAt: "February 2022",
+    createdAt: "2022-02-01",
     updatedAt: formatDate(),
     following: [
       {
@@ -125,7 +125,7 @@ export const users = [
     bio: "Hey! Yuvraj here",
     website: "https://github.com/yuvraj1905",
     profileAvatar: "https://avatars.githubusercontent.com/u/94983216?v=4",
-    createdAt: "September 2022",
+    createdAt: "2022-09-01",
     updatedAt: formatDate(),
     following: [
       {
@@ -163,7 +163,7 @@ export const users = [
     bio: "Hey! HARSHVARDHAN here",
     website: "https://github.com/harsh1kashyap",
     profileAvatar: "https://avatars.githubusercontent.com/u/67819701?v=4",
-    createdAt: "March 2023",
+    createdAt: "2023-03-01",
     updatedAt: formatDate(),
     following: [
       {
