@@ -123,6 +123,7 @@ export const editPostHandler = function (schema, request) {
       );
     }
     const postId = request.params.postId;
+
     const { postData } = JSON.parse(request.requestBody);
     // console.log(postData);
     let post = schema.posts.findBy({ _id: postId }).attrs;
@@ -135,6 +136,7 @@ export const editPostHandler = function (schema, request) {
         }
       );
     }
+
     post = { ...post, ...postData };
     this.db.posts.update({ _id: postId }, post);
     return new Response(201, {}, { posts: this.db.posts });

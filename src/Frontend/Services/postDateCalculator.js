@@ -9,7 +9,6 @@ export const dateJoinedCalculator = (userAccountCreationDate) => {
     case "02": {
       return `February ${year}`;
     }
-
     case "03": {
       return `March ${year}`;
     }

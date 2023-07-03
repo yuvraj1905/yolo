@@ -253,7 +253,7 @@ export const posts = [
     updatedAt: "2023-04-21",
 
     likes: {
-      likeCount: 2,
+      likeCount: 4,
       dislikedBy: [],
       likedBy: [
         {

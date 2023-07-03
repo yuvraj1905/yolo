@@ -97,7 +97,6 @@ const HomepagePostCard = ({ data, dpCard, loadingSetter }) => {
   }, [showEditModal]);
 
   // console.log(data);
-
   return (
     <section
       key={_id}

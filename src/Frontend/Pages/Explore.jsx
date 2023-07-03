@@ -108,6 +108,11 @@ const Explore = () => {
         }, 750);
       }
     };
+
+    // [p1,p2,p3,p4,p5]=>explorePageData;
+    // [].slice()=>initial 2 data;
+    // 2post
+
     explorePageData.slice(0, pageNumber * 3).length !==
       explorePageData.length &&
       window.addEventListener("scroll", infScrollHandler);
@@ -134,6 +139,7 @@ const Explore = () => {
             data-testid="loader"
           />
         )}
+        {/* [1,2,1,1,1] */}
         {explorePageData.slice(0, pageNumber * 3).length ===
           explorePageData.length && (
           <p
