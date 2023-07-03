@@ -226,7 +226,13 @@ const ProfilePage = () => {
             </p>
           </span>
         </section>
-        <section className="profilePageInfo">
+        <section
+          className="profilePageInfo"
+          onClick={() => {
+            followingListOpen && setFollowingListOpen(false);
+            followerListOpen && setFollowerListOpen(false);
+          }}
+        >
           <span>
             <img src={profileAvatar} alt={username} className="ppDp" />
           </span>

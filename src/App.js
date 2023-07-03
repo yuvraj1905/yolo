@@ -13,7 +13,7 @@ import RightSide from "./Frontend/Components/RightSide";
 import { useAuthContext } from "./Frontend/Context/AuthContext";
 import DetailPage from "./Frontend/Pages/DetailPage";
 import ProfilePage from "./Frontend/Pages/ProfilePage";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import ErrorPage from "./Frontend/Pages/ErrorPage";
 
 function App() {
@@ -21,6 +21,7 @@ function App() {
     authState: { token },
   } = useAuthContext();
 
+  const [darkMode, setDarkMode] = useState(false);
   const location = useLocation();
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
