@@ -47,7 +47,7 @@ const RightSide = () => {
     token && getAllUsers();
     setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 1500);
   }, []);
 
   useEffect(() => {
@@ -106,9 +106,9 @@ const RightSide = () => {
                 </p>
               </span>
               <span>
-                {[...searchHistory.reverse()]?.length > 0 &&
+                {searchHistory?.length > 0 &&
                   allUsers?.length > 0 &&
-                  [...searchHistory.reverse()]?.map((search) => {
+                  [...searchHistory].reverse()?.map((search) => {
                     const userFound = allUsers?.find(
                       ({ username, firstName, lastName }) =>
                         username.toLowerCase() === search.toLowerCase() ||
@@ -193,7 +193,7 @@ const RightSide = () => {
           />
         )}
       </section>
-      {loading ? (
+      {loading && (
         <PulseLoader
           color="#87CEEB"
           cssOverride={override}
@@ -201,8 +201,13 @@ const RightSide = () => {
           aria-label="Loading Spinner"
           data-testid="loader"
         />
-      ) : suggestedUsers.length > 0 ? (
-        <section className="suggestedUsersSection">
+      )}
+
+      {suggestedUsers?.length > 0 ? (
+        <section
+          style={{ display: loading ? "none" : "" }}
+          className="suggestedUsersSection"
+        >
           <h2>Suggested users</h2>
           <section className="suggested__user">
             {[...suggestedUsers?.slice(0, 3)]?.map((user) => (
@@ -211,7 +216,10 @@ const RightSide = () => {
           </section>
         </section>
       ) : (
-        <section className="suggestedUsersSection">
+        <section
+          style={{ display: loading ? "none" : "" }}
+          className="suggestedUsersSection"
+        >
           <h2>No more suggestions</h2>
         </section>
       )}

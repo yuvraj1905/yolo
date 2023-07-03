@@ -46,7 +46,7 @@ const ProfilePage = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 1500);
+    }, 2000);
   }, [usernamee]);
   const {
     _id,
@@ -155,13 +155,18 @@ const ProfilePage = () => {
           );
           if (res2.status === 200 || res2.status === 201) {
             setDataa({ ...res.data.user });
-            setUserPosts([...res2.data.posts]);
+            setUserPosts([
+              ...res2.data.posts.map((post) => ({
+                ...post,
+                profileAvatar: res.data.user.profileAvatar,
+              })),
+            ]);
             setFirstNamee(res.data.user.firstName);
             setLastNamee(res.data.user.lastName);
             setBioo(res.data.user.bio);
             setWebsitee(res.data.user.website);
             setEditProfileAvatar(res.data.user.profileAvatar);
-            setLoading(false);
+            // setLoading(false);
             setFollowerss([...res.data.user.followers]);
             setFollowingg([...res.data.user.following]);
           }
@@ -185,7 +190,7 @@ const ProfilePage = () => {
   // useEffect(() => {}, []);
   return (
     <>
-      {loading ? (
+      {loading && (
         <PulseLoader
           color="#87CEEB"
           cssOverride={override}
@@ -193,229 +198,220 @@ const ProfilePage = () => {
           aria-label="Loading Spinner"
           data-testid="loader"
         />
-      ) : (
-        <div className="profilePage">
-          <section className="goBackBtnProfilePage">
-            <AiOutlineArrowLeft
-              size={18}
-              className="cursorPointer gobackfrompost"
-              onClick={() =>
-                location?.state?.from
-                  ? navigate(location?.state?.from)
-                  : navigate("/")
-              }
-            />
+      )}
+
+      <div style={{ display: loading ? "none" : "" }} className="profilePage">
+        <section className="goBackBtnProfilePage">
+          <AiOutlineArrowLeft
+            size={18}
+            className="cursorPointer gobackfrompost"
+            onClick={() =>
+              location?.state?.from
+                ? navigate(location?.state?.from)
+                : navigate("/")
+            }
+          />
+          <span
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "0.2rem",
+            }}
+          >
+            <h2>
+              {firstName} {lastName}
+            </h2>
+            <p style={{ color: "grey", fontWeight: 700 }}>
+              {userPosts.length} posts
+            </p>
+          </span>
+        </section>
+        <section className="profilePageInfo">
+          <span>
+            <img src={profileAvatar} alt={username} className="ppDp" />
+          </span>
+          <span className="ppDetails">
             <span
               style={{
                 display: "flex",
                 flexDirection: "column",
-                gap: "0.2rem",
               }}
             >
-              <h2>
+              <h3>
                 {firstName} {lastName}
-              </h2>
-              <p style={{ color: "grey", fontWeight: 700 }}>
-                {userPosts.length} posts
-              </p>
+              </h3>
+              <small style={{ color: "grey" }}>@{username}</small>
             </span>
-          </section>
-          <section className="profilePageInfo">
-            <span>
-              <img src={profileAvatar} alt={username} className="ppDp" />
+            <p className="website linkkDate">
+              <MdOutlineDetails />
+              <span>{bio}</span>
+            </p>
+            <span className="website ">
+              <AiOutlineLink /> {""} <Link to={website}>{website}</Link>
             </span>
-            <span className="ppDetails">
-              <span
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                }}
-              >
-                <h3>
-                  {firstName} {lastName}
-                </h3>
-                <small style={{ color: "grey" }}>@{username}</small>
+            <p className="website linkkDate">
+              <RxCalendar style={{ alignSelf: "flex-start" }} />
+              <span style={{ alignSelf: "flex-end" }}>
+                Joined {dateJoinedCalculator(createdAt)}
               </span>
-              <p className="website linkkDate">
-                <MdOutlineDetails />
-                <span>{bio}</span>
-              </p>
-              <span className="website ">
-                <AiOutlineLink /> {""} <Link to={website}>{website}</Link>
-              </span>
-              <p className="website linkkDate">
-                <RxCalendar style={{ alignSelf: "flex-start" }} />
-                <span style={{ alignSelf: "flex-end" }}>
-                  Joined {dateJoinedCalculator(createdAt)}
-                </span>
-              </p>
-              <span className="centering">
-                <FaUserFriends />
-                <p
-                  onClick={() => {
-                    if (!followerListOpen) {
-                      setFollowingListOpen(false);
-                      setFollowerListOpen(true);
-                    } else {
-                      setFollowerListOpen(false);
-                    }
-                  }}
-                  className="website linkk"
-                >
-                  Followers:{""}
-                  <span style={{ fontWeight: "bold" }}>
-                    {followers.length}
-                  </span>{" "}
-                </p>
-                <p
-                  onClick={() => {
-                    if (!followingListOpen) {
-                      setFollowerListOpen(false);
-                      setFollowingListOpen(true);
-                    } else {
-                      setFollowingListOpen(false);
-                    }
-                  }}
-                  className="website linkk"
-                >
-                  Following:{""}
-                  <span style={{ fontWeight: "bold" }}>
-                    {following.length}
-                  </span>{" "}
-                </p>
-              </span>
-              <span style={{ display: !followerListOpen ? "none" : "" }}>
-                <FollowList
-                  dataa={followerss}
-                  functionn={setFollowerListOpen}
-                  follower
-                />
-              </span>
-              <span style={{ display: !followingListOpen ? "none" : "" }}>
-                <FollowList
-                  dataa={followingg}
-                  functionn={setFollowingListOpen}
-                />
-              </span>
-            </span>
-            {currentUser.username === username && (
-              <button
+            </p>
+            <span className="centering">
+              <FaUserFriends />
+              <p
                 onClick={() => {
-                  setEditProfileModalOpened(true);
+                  if (!followerListOpen) {
+                    setFollowingListOpen(false);
+                    setFollowerListOpen(true);
+                  } else {
+                    setFollowerListOpen(false);
+                  }
                 }}
-                className="cursorPointer editProfileBtn"
+                className="website linkk"
               >
-                Edit Profile
-              </button>
-            )}
-            {currentUser.username !== username && (
-              <button
+                Followers:{""}
+                <span style={{ fontWeight: "bold" }}>
+                  {followers?.length}
+                </span>{" "}
+              </p>
+              <p
                 onClick={() => {
-                  // setEditProfileModalOpened(true);
-                  followerss.find(
-                    (user) => user.username === currentUser.username
-                  )
-                    ? unfollowUserHandler(username, token, dispatchAuthState)
-                    : followUserHandler(username, token, dispatchAuthState);
+                  if (!followingListOpen) {
+                    setFollowerListOpen(false);
+                    setFollowingListOpen(true);
+                  } else {
+                    setFollowingListOpen(false);
+                  }
                 }}
-                className="cursorPointer folUnfolBtn"
+                className="website linkk"
               >
-                {followerss.find(
+                Following:{""}
+                <span style={{ fontWeight: "bold" }}>
+                  {following?.length}
+                </span>{" "}
+              </p>
+            </span>
+            <span style={{ display: !followerListOpen ? "none" : "" }}>
+              <FollowList
+                dataa={followerss}
+                functionn={setFollowerListOpen}
+                follower
+              />
+            </span>
+            <span style={{ display: !followingListOpen ? "none" : "" }}>
+              <FollowList dataa={followingg} functionn={setFollowingListOpen} />
+            </span>
+          </span>
+          {currentUser.username === username && (
+            <button
+              onClick={() => {
+                setEditProfileModalOpened(true);
+              }}
+              className="cursorPointer editProfileBtn"
+            >
+              Edit Profile
+            </button>
+          )}
+          {currentUser.username !== username && (
+            <button
+              onClick={() => {
+                // setEditProfileModalOpened(true);
+                followerss.find(
                   (user) => user.username === currentUser.username
                 )
-                  ? "following"
-                  : "Follow"}
-              </button>
-            )}
-          </section>
-          <section
-            style={{ display: !editProfileModalOpened ? "none" : "" }}
-            className="editProfileModal"
-          >
-            <span onClick={selectNewPictureClickHandler}>
-              <img
-                src={editProfileAvatar}
-                alt=""
-                className="ppDp dpChangeSpan"
-              />
-              <AiFillCamera
-                className="changeDpIcon dpChangeSpan"
-                size={30}
-                color="white"
-              />
-            </span>
-
-            <input
-              type="file"
-              style={{ display: "none" }}
-              onChange={editProfileAvatarHandler}
-              ref={editProfileDpRef}
+                  ? unfollowUserHandler(username, token, dispatchAuthState)
+                  : followUserHandler(username, token, dispatchAuthState);
+              }}
+              className="cursorPointer folUnfolBtn"
+            >
+              {followerss.find((user) => user.username === currentUser.username)
+                ? "following"
+                : "Follow"}
+            </button>
+          )}
+        </section>
+        <section
+          style={{ display: !editProfileModalOpened ? "none" : "" }}
+          className="editProfileModal"
+        >
+          <span onClick={selectNewPictureClickHandler}>
+            <img src={editProfileAvatar} alt="" className="ppDp dpChangeSpan" />
+            <AiFillCamera
+              className="changeDpIcon dpChangeSpan"
+              size={30}
+              color="white"
             />
-            <span className="editProfileDetails">
-              <label htmlFor="firstName">FirstName: </label>
-              <input
-                type="text"
-                style={{ width: "14rem" }}
-                id="firstName"
-                value={firstNamee}
-                onChange={(e) => setFirstNamee(e.target.value)}
-              />
-              <label htmlFor="lastName">LastName: </label>
-              <input
-                type="text"
-                style={{ width: "14rem", marginLeft: "0.03rem" }}
-                id="lastName"
-                value={lastNamee}
-                onChange={(e) => setLastNamee(e.target.value)}
-              />
-              <label htmlFor="bio">Bio: </label>
-              <input
-                type="text"
-                style={{ width: "14rem", marginLeft: "0.03rem" }}
-                id="bio"
-                value={bioo}
-                onChange={(e) => setBioo(e.target.value)}
-              />
-              <label htmlFor="website">Website: </label>
-              <input
-                type="text"
-                style={{ width: "14rem", marginLeft: "0.03rem" }}
-                id="website"
-                value={websitee}
-                onChange={(e) => setWebsitee(e.target.value)}
-              />
+          </span>
+
+          <input
+            type="file"
+            style={{ display: "none" }}
+            onChange={editProfileAvatarHandler}
+            ref={editProfileDpRef}
+          />
+          <span className="editProfileDetails">
+            <label htmlFor="firstName">FirstName: </label>
+            <input
+              type="text"
+              style={{ width: "14rem" }}
+              id="firstName"
+              value={firstNamee}
+              onChange={(e) => setFirstNamee(e.target.value)}
+            />
+            <label htmlFor="lastName">LastName: </label>
+            <input
+              type="text"
+              style={{ width: "14rem", marginLeft: "0.03rem" }}
+              id="lastName"
+              value={lastNamee}
+              onChange={(e) => setLastNamee(e.target.value)}
+            />
+            <label htmlFor="bio">Bio: </label>
+            <input
+              type="text"
+              style={{ width: "14rem", marginLeft: "0.03rem" }}
+              id="bio"
+              value={bioo}
+              onChange={(e) => setBioo(e.target.value)}
+            />
+            <label htmlFor="website">Website: </label>
+            <input
+              type="text"
+              style={{ width: "14rem", marginLeft: "0.03rem" }}
+              id="website"
+              value={websitee}
+              onChange={(e) => setWebsitee(e.target.value)}
+            />
+          </span>
+          <span className="newAvatarsSpan">
+            <p className="updateAvatarTitle">Try all new Yo-avatars</p>
+            <span className="avatarOptions">
+              {avatars.map((avatar) => (
+                <img
+                  key={avatar}
+                  onClick={() => setEditProfileAvatar(avatar)}
+                  src={avatar}
+                  alt=""
+                  className="profilepPictures profilee"
+                />
+              ))}
             </span>
-            <span className="newAvatarsSpan">
-              <p className="updateAvatarTitle">Try all new Yo-avatars</p>
-              <span className="avatarOptions">
-                {avatars.map((avatar) => (
-                  <img
-                    key={avatar}
-                    onClick={() => setEditProfileAvatar(avatar)}
-                    src={avatar}
-                    alt=""
-                    className="profilepPictures profilee"
-                  />
-                ))}
-              </span>
-              <span className="ppSaveDiscardBtns">
-                <button onClick={ppUpdateDiscardHandler}>Discard</button>
-                <button onClick={profileDataUpdateHandler}>Update</button>
-              </span>
+            <span className="ppSaveDiscardBtns">
+              <button onClick={ppUpdateDiscardHandler}>Discard</button>
+              <button onClick={profileDataUpdateHandler}>Update</button>
             </span>
-          </section>
-          <section style={{ marginTop: ".1rem" }}>
-            {[...userPosts].reverse().map((post) => (
-              <HomepagePostCard
-                loadingSetter={setLoading}
-                data={post}
-                dpCard
-                key={post._id}
-              />
-            ))}
-          </section>
-        </div>
-      )}
+          </span>
+        </section>
+        <section style={{ marginTop: ".1rem" }}>
+          {[...userPosts].reverse().map((post) => (
+            <HomepagePostCard
+              loadingSetter={setLoading}
+              data={post}
+              dpCard
+              key={post._id}
+            />
+          ))}
+        </section>
+      </div>
     </>
   );
 };

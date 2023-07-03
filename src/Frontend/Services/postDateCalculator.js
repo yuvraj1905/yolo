@@ -1,6 +1,6 @@
 export const dateJoinedCalculator = (userAccountCreationDate) => {
-  const year = userAccountCreationDate.slice(0, 4);
-  const month = userAccountCreationDate.slice(5, 7);
+  const year = userAccountCreationDate?.slice(0, 4);
+  const month = userAccountCreationDate?.slice(5, 7);
   // console.log(month, year);
   switch (month) {
     case "01": {
@@ -41,7 +41,7 @@ export const dateJoinedCalculator = (userAccountCreationDate) => {
     }
 
     default:
-      return dateJoinedCalculator.slice(0, 10);
+      return userAccountCreationDate?.slice(0, 10);
   }
 };
 

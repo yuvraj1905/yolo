@@ -29,6 +29,7 @@ import "../styles/Explore.css";
 import { useAuthContext } from "../Context/AuthContext";
 import HomepagePostCard from "../Components/HomepagePostCard";
 import ClipLoader from "react-spinners/ClipLoader";
+import { PulseLoader } from "react-spinners";
 
 const Explore = () => {
   const {
@@ -45,6 +46,13 @@ const Explore = () => {
     margin: "1.25rem auto",
   };
 
+  const [mainLoading, setMainLoading] = useState(true);
+
+  const override2 = {
+    display: "block",
+    margin: "20rem auto",
+  };
+
   useEffect(() => {
     // onClick={() => {
     dispatchAuthState({
@@ -55,6 +63,9 @@ const Explore = () => {
       type: "showRecentSearches",
       payload: false,
     });
+    setTimeout(() => {
+      setMainLoading(false);
+    }, 2000);
     // }}
   }, []);
 
@@ -124,45 +135,56 @@ const Explore = () => {
   }, [explorePageData, pageNumber]);
 
   return (
-    <div className="explore">
-      <h2>Explore Yolo</h2>
-      <section className="homepagePosts">
-        {explorePageData.slice(0, pageNumber * 3).map((post) => (
-          <HomepagePostCard exploreCard key={post._id} data={post} />
-        ))}
-        {loading && (
-          <ClipLoader
-            color="grey"
-            cssOverride={override}
-            size={50}
-            aria-label="Loading Spinner"
-            data-testid="loader"
-          />
-        )}
-        {/* [1,2,1,1,1] */}
-        {explorePageData.slice(0, pageNumber * 3).length ===
-          explorePageData.length && (
-          <p
-            style={{
-              textAlign: "center",
-              padding: "1.25rem 0",
-              fontWeight: "700",
-            }}
-          >
-            No more posts to show ! You've covered everything !{" "}
-            <button
-              onClick={() =>
-                window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
-              }
-              className="cursorPointer followBtn"
-              style={{ padding: ".5rem" }}
+    <>
+      {mainLoading && (
+        <PulseLoader
+          color="#87CEEB"
+          cssOverride={override2}
+          size={30}
+          aria-label="Loading Spinner"
+          data-testid="loader"
+        />
+      )}
+      <div style={{ display: mainLoading ? "none" : "" }} className="explore">
+        <h2>Explore Yolo</h2>
+        <section className="homepagePosts">
+          {explorePageData.slice(0, pageNumber * 3).map((post) => (
+            <HomepagePostCard exploreCard key={post._id} data={post} />
+          ))}
+          {loading && (
+            <ClipLoader
+              color="grey"
+              cssOverride={override}
+              size={50}
+              aria-label="Loading Spinner"
+              data-testid="loader"
+            />
+          )}
+          {/* [1,2,1,1,1] */}
+          {explorePageData.slice(0, pageNumber * 3).length ===
+            explorePageData.length && (
+            <p
+              style={{
+                textAlign: "center",
+                padding: "1.25rem 0",
+                fontWeight: "700",
+              }}
             >
-              Jump to top
-            </button>
-          </p>
-        )}
-      </section>
-    </div>
+              No more posts to show ! You've covered everything !{" "}
+              <button
+                onClick={() =>
+                  window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
+                }
+                className="cursorPointer followBtn"
+                style={{ padding: ".5rem" }}
+              >
+                Jump to top
+              </button>
+            </p>
+          )}
+        </section>
+      </div>
+    </>
   );
 };
 

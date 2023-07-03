@@ -74,6 +74,7 @@ const HomepagePostCard = ({ data, dpCard, loadingSetter }) => {
   const [editedContentInput, setEditedContentInput] = useState(content);
   const [editedContentMedia, setEditedContentMedia] = useState(media);
   const [editedContentMediaFile, setEditedContentMediaFile] = useState("");
+  const [dp, setDp] = useState("");
 
   const editImgRef = useRef(null);
   const editPostImageIconClickHandler = () => {
@@ -87,8 +88,14 @@ const HomepagePostCard = ({ data, dpCard, loadingSetter }) => {
     }
   };
 
-  const whoIsThisUser = userFinder(username);
-
+  useEffect(() => {
+    const userFetch = async () => {
+      const whoIsThisUser = await userFinder(username);
+      setDp(whoIsThisUser.profileAvatar);
+    };
+    userFetch();
+  }, []);
+  // console.log(dp, "dp");
   // useEffect(() => {}, [explorePageData]);
   useEffect(() => {
     if (inputRef.current) {
@@ -118,9 +125,7 @@ const HomepagePostCard = ({ data, dpCard, loadingSetter }) => {
           <img
             className="profilepPictures"
             src={
-              currentUser_username === username
-                ? currentUser_profileAvatar
-                : profileAvatar
+              currentUser_username === username ? currentUser_profileAvatar : dp
             }
             alt={username}
           />

@@ -14,6 +14,7 @@ import { useAuthContext } from "./Frontend/Context/AuthContext";
 import DetailPage from "./Frontend/Pages/DetailPage";
 import ProfilePage from "./Frontend/Pages/ProfilePage";
 import { useEffect } from "react";
+import ErrorPage from "./Frontend/Pages/ErrorPage";
 
 function App() {
   const {
@@ -83,6 +84,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         {/* <Route path="/loginNew" element={<LoginNew />} /> */}
         <Route path="/signup" element={<Signup />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
       {token && <RightSide />}
       <ToastContainer

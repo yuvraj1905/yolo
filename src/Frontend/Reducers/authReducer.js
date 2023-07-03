@@ -5,6 +5,7 @@ export const authReducer = (state, { type, payload }) => {
     }
 
     case "exploreDataSetter": {
+      // console.log(payload);
       return { ...state, explorePageData: [...payload] };
     }
 

@@ -51,9 +51,8 @@ const Bookmarks = () => {
     });
   }, []);
   return (
-    <div className="bookmarks">
-      <h2>Bookmarks</h2>
-      {loading ? (
+    <>
+      {loading && (
         <PulseLoader
           color="#87CEEB"
           cssOverride={override}
@@ -61,13 +60,16 @@ const Bookmarks = () => {
           aria-label="Loading Spinner"
           data-testid="loader"
         />
-      ) : (
+      )}
+      <div style={{ display: loading ? "none" : "" }} className="bookmarks">
+        <h2>Bookmarks</h2>
+
         <section>
           {[...explorePageData].filter((post) =>
-            bookmarks.some((bm) => post._id === bm)
+            bookmarks?.some((bm) => post._id === bm)
           ).length > 0 ? (
             [...explorePageData]
-              .filter((post) => bookmarks.some((bm) => post._id === bm))
+              .filter((post) => bookmarks?.some((bm) => post._id === bm))
               .map((post) => <HomepagePostCard data={post} key={post._id} />)
           ) : (
             <h2 style={{ textAlign: "center", marginTop: "1rem" }}>
@@ -75,8 +77,8 @@ const Bookmarks = () => {
             </h2>
           )}
         </section>
-      )}
-    </div>
+      </div>
+    </>
   );
 };
 
