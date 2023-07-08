@@ -263,7 +263,7 @@ const HomepagePostCard = ({ data, dpCard, loadingSetter }) => {
         <span className="dpAndPostContentInput">
           <img
             className="profilepPictures"
-            src={profileAvatar}
+            src={currentUser_profileAvatar}
             alt={username}
           />
           <textarea
