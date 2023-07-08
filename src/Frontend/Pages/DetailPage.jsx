@@ -646,7 +646,12 @@ export function LikedByUserCard({ dataa, functionn }) {
               />
               <span>
                 <h3>
-                  {firstName} {lastName}
+                  {currentUser_username === username
+                    ? currentUser_firstName
+                    : profileAvatar}{" "}
+                  {currentUser_username === username
+                    ? currentUser_lastName
+                    : profileAvatar}
                 </h3>
                 <small>{username}</small>
               </span>
