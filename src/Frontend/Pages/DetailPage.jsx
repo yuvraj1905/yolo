@@ -586,6 +586,20 @@ export default DetailPage;
 export function LikedByUserCard({ dataa, functionn }) {
   const navigate = useNavigate();
   const location = useLocation();
+  const {
+    authState: {
+      token,
+      currentUser: {
+        username: currentUser_username,
+        following,
+        bookmarks,
+        firstName: currentUser_firstName,
+        lastName: currentUser_lastName,
+        profileAvatar: currentUser_profileAvatar,
+      },
+    },
+    dispatchAuthState,
+  } = useAuthContext();
 
   return (
     <div className="LikedByUserCard">
@@ -621,7 +635,15 @@ export function LikedByUserCard({ dataa, functionn }) {
                 });
               }}
             >
-              <img src={profileAvatar} className="profilepPictures" alt="" />
+              <img
+                src={
+                  currentUser_username === username
+                    ? currentUser_profileAvatar
+                    : profileAvatar
+                }
+                className="profilepPictures"
+                alt=""
+              />
               <span>
                 <h3>
                   {firstName} {lastName}
