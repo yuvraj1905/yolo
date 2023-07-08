@@ -648,10 +648,10 @@ export function LikedByUserCard({ dataa, functionn }) {
                 <h3>
                   {currentUser_username === username
                     ? currentUser_firstName
-                    : profileAvatar}{" "}
+                    : firstName}{" "}
                   {currentUser_username === username
                     ? currentUser_lastName
-                    : profileAvatar}
+                    : lastName}
                 </h3>
                 <small>{username}</small>
               </span>
