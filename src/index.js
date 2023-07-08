@@ -18,7 +18,7 @@ root.render(
           domain="dev-iens8z5c1mn7a6ua.us.auth0.com"
           clientId="WLpbhNPkieUk4ONWEomXlwoYKCdCjcA8"
           authorizationParams={{
-            redirect_uri: window.location.origin,
+            redirect_uri: "https://yolo-neogcamp.netlify.app/login",
           }}
         >
           <App />
