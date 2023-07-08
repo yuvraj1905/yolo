@@ -13,6 +13,7 @@ import { PulseLoader } from "react-spinners";
 import EmojiPicker from "emoji-picker-react";
 import { toastMaker } from "../Services/toastMaker";
 import { useLocation } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Home = () => {
   const {
@@ -75,6 +76,10 @@ const Home = () => {
     }, 2500);
   }, [homeData]);
 
+  const { loginWithRedirect, user, logout } = useAuth0();
+  useEffect(() => {
+    console.log(user);
+  }, [user]);
   // useEffect(() => {
   //   setLoading(true);
   //   setTimeout(() => {
