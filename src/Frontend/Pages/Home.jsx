@@ -67,7 +67,7 @@ const Home = () => {
     setHomePageData([...homeData]);
     setTimeout(() => {
       setLoading(false);
-    }, 2500);
+    }, 1500);
   }, [homeData]);
 
   // useEffect(() => {
