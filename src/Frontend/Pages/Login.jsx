@@ -75,6 +75,9 @@ const Login = () => {
           <button type="button" onClick={loginWithRedirect}>
             Login with google
           </button>
+          <button type="button" onClick={logout}>
+            Logout
+          </button>
           <p>
             New to Yolo?{" "}
             <span
