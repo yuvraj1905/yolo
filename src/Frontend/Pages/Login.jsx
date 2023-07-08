@@ -5,7 +5,11 @@ import { loginHandler } from "../Services/loginSignup";
 import { useAuthContext } from "../Context/AuthContext";
 import "../styles/loginPage.css";
 
+import { useAuth0 } from "@auth0/auth0-react";
 const Login = () => {
+  const { loginWithRedirect, user, logout } = useAuth0();
+  console.log(user);
+
   const navigate = useNavigate();
   const { dispatchAuthState } = useAuthContext();
   const [username, setusername] = useState("");
@@ -67,6 +71,9 @@ const Login = () => {
             className="guestLoginBtn cursorPointer"
           >
             Login as guest
+          </button>
+          <button type="button" onClick={loginWithRedirect}>
+            Login with google
           </button>
           <p>
             New to Yolo?{" "}
