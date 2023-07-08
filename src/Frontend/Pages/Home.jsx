@@ -2,18 +2,13 @@ import React, { useState, useRef, useEffect } from "react";
 import "../styles/Home.css";
 import { useAuthContext } from "../Context/AuthContext";
 import { BsEmojiSunglasses, BsImage } from "react-icons/bs";
-import { MdInsertEmoticon } from "react-icons/md";
 import HomepagePostCard from "../Components/HomepagePostCard";
 import { formatDate } from "../../backend/utils/authUtils";
 import { cloudinaryImageFetcher, newPostAdder } from "../Services/PostsManager";
 import { v4 as uuid } from "uuid";
 import { ImCross } from "react-icons/im";
-import axios from "axios";
 import { PulseLoader } from "react-spinners";
 import EmojiPicker from "emoji-picker-react";
-import { toastMaker } from "../Services/toastMaker";
-import { useLocation } from "react-router-dom";
-import { useAuth0 } from "@auth0/auth0-react";
 
 const Home = () => {
   const {
@@ -68,7 +63,6 @@ const Home = () => {
       payload: false,
     });
   }, []);
-
   useEffect(() => {
     setHomePageData([...homeData]);
     setTimeout(() => {
@@ -76,10 +70,6 @@ const Home = () => {
     }, 2500);
   }, [homeData]);
 
-  const { loginWithRedirect, user, logout } = useAuth0();
-  useEffect(() => {
-    console.log(user);
-  }, [user]);
   // useEffect(() => {
   //   setLoading(true);
   //   setTimeout(() => {

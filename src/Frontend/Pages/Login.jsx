@@ -1,17 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { BiShow, BiHide } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import { loginHandler } from "../Services/loginSignup";
 import { useAuthContext } from "../Context/AuthContext";
 import "../styles/loginPage.css";
 
-import { useAuth0 } from "@auth0/auth0-react";
 const Login = () => {
-  const { loginWithRedirect, user, logout } = useAuth0();
-  useEffect(() => {
-    console.log(user);
-  }, [user]);
-
   const navigate = useNavigate();
   const { dispatchAuthState } = useAuthContext();
   const [username, setusername] = useState("");
@@ -73,12 +67,6 @@ const Login = () => {
             className="guestLoginBtn cursorPointer"
           >
             Login as guest
-          </button>
-          <button type="button" onClick={loginWithRedirect}>
-            Login with google
-          </button>
-          <button type="button" onClick={logout}>
-            Logout
           </button>
           <p>
             New to Yolo?{" "}
