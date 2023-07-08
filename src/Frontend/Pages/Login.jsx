@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { BiShow, BiHide } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
-import { loginHandler, loginHandlerGuest } from "../Services/loginSignup";
+import { loginHandler } from "../Services/loginSignup";
 import { useAuthContext } from "../Context/AuthContext";
-import entryGif from "../assets/entryGif.gif";
 import "../styles/loginPage.css";
 
 const Login = () => {
@@ -15,11 +14,6 @@ const Login = () => {
 
   return (
     <div className="loginPage">
-      <img
-        src="https://res.cloudinary.com/yuvraj1905/image/upload/v1687950350/entryGif_ebuipk.gif"
-        alt=""
-        className="entryGif"
-      />
       <section className="loginDetailsSection">
         <img
           className="entryLogo"
@@ -41,18 +35,20 @@ const Login = () => {
             type="text"
             id="input_username"
           />
-          <input
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="enter password"
-            type={showPass ? "password" : "text"}
-            id="input_password"
-          />
-          <span
-            className="seePassword cursorPointer"
-            onClick={() => setShowPass(!showPass)}
-          >
-            {showPass ? <BiShow /> : <BiHide />}
+          <span>
+            <input
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="enter password"
+              type={showPass ? "password" : "text"}
+              id="input_password"
+            />
+            <span
+              className="seePassword cursorPointer"
+              onClick={() => setShowPass(!showPass)}
+            >
+              {showPass ? <BiShow /> : <BiHide />}
+            </span>
           </span>
           <button className="loginBtn cursorPointer" type="submit">
             Login

@@ -16,11 +16,6 @@ const Signup = () => {
   const navigate = useNavigate();
   return (
     <div className="loginPage">
-      <img
-        src="https://res.cloudinary.com/yuvraj1905/image/upload/v1687950350/entryGif_ebuipk.gif"
-        alt=""
-        className="entryGif"
-      />
       <section className="loginDetailsSection">
         <img
           className="entryLogo signuplogo"
@@ -67,20 +62,20 @@ const Signup = () => {
             type="username"
             id="input_username"
           />
-          <input
-            autoComplete="off"
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="enter password"
-            type={showPass ? "password" : "text"}
-            id="input_password"
-          />
-          <span
-            className="seePassword seePassSignup"
-            onClick={() => setShowPass(!showPass)}
-          >
-            {showPass ? <BiShow /> : <BiHide />}
+          <span>
+            <input
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="enter password"
+              type={showPass ? "password" : "text"}
+              id="input_password"
+            />
+            <span
+              className="seePassword cursorPointer"
+              onClick={() => setShowPass(!showPass)}
+            >
+              {showPass ? <BiShow /> : <BiHide />}
+            </span>
           </span>
           <button className="loginBtn cursorPointer" type="submit">
             Sign Up
