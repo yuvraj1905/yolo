@@ -16,13 +16,13 @@ root.render(
       <AuthContextProvider>
         <Auth0Provider
           domain="dev-iens8z5c1mn7a6ua.us.auth0.com"
-          clientId="2PhPE5CTjaSthvYW2HFA3y8fKqyKjUd6"
+          clientId="WLpbhNPkieUk4ONWEomXlwoYKCdCjcA8"
           authorizationParams={{
-            redirect_uri: "https://master--yolo-neogcamp.netlify.app/login",
+            redirect_uri: window.location.origin,
           }}
         >
           <App />
-        </Auth0Provider>{" "}
+        </Auth0Provider>
       </AuthContextProvider>
     </BrowserRouter>
   </React.StrictMode>
