@@ -34,19 +34,19 @@ function App() {
         <Route
           path="/"
           element={
-            <RequiredAuth>
-              <Home />
-            </RequiredAuth>
+            // <RequiredAuth>
+            // </RequiredAuth>
+            <Home />
           }
         />
-        <Route
+        {/* <Route
           path="/home"
           element={
             <RequiredAuth>
               <Home />
             </RequiredAuth>
           }
-        />
+        /> */}
 
         <Route
           path="/explore"
